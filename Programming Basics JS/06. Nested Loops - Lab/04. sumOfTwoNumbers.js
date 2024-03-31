@@ -22,7 +22,6 @@ function sumOfTwoNumbers(input) {
     }
 
 }
-
 sumOfTwoNumbers(["88",
 "888",
 "1000"]);
