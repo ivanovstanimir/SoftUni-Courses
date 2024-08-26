@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First DOM</title>
+    <style type="text/css">
+        h1.red {
+            color: #ff0000;
+        }
+
+        p.right {
+            text-align: right;
+        }
+
+        h2,
+        h3,
+        del {
+            color: #ff0000;
+        }
+
+        #bluebold {
+            color: #0000ff;
+            font-weight: bold;
+        }
+
+        #fovourite {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="red">Targeting Elements</h1>
+    <del>червен и зачеркнат текст</del>
+    <p class="right">Right</p>
+    <p class="right" id="bluebold">Син и удебелен текст, който ще се покаже вдясно</p>
+    <button onclick="clickK1()">Click1</button>
+    <br>
+    <button onclick="clickK2()">Click2</button>
+    <script src="ss1.js"></script>
+    <script src="ss2.js"></script>
+    <h2>Shopping List</h2>
+    <ol class="shopping-list">
+        <li>Bread</li>
+        <li>Milk</li>
+        <li id="fovourite">Meat</li>
+        <li id="many">Eggs</li>
+    </ol>
+    <input type="text">
+    <script>
+        let fovouriteElement = document.getElementById('fovourite');
+        console.log(fovouriteElement.textContent);
+        setTimeout(() => {
+            fovouriteElement.textContent = 'Stake';
+        }, 3000);
+
+        let headingElement = document.querySelector('p.right');
+        console.log(headingElement);
+
+        let shoppingElements = document.querySelectorAll('.shopping-list li');
+        console.log(shoppingElements);
+
+        let parentElement = fovouriteElement.parentElement;
+        console.log(parentElement);
+
+        let childrenElement = parentElement.children;
+        console.log(childrenElement);
+    </script>
+</body>
+
+</html>
